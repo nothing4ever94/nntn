@@ -1,168 +1,175 @@
-:root {
-  --duration: 20s;
-  --delay: 20s;
-}
-
-html {
-  background-color: black;
-  animation: shrink var(--duration) var(--delay) linear infinite;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-  position: relative;
-  margin: 0 auto;
-  padding: 0 1rem;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  animation: spin var(--duration) var(--delay) linear infinite;
-  transform-style: preserve-3d;
-  perspective: 25rem;
+  background: black;
+  font-family: roboto;
 }
 
-img {
-  --duration: 40s;
-  --name: float-up-1;
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.container section.forward {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  cursor: pointer;
+}
+.container section.back {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  cursor: pointer;
+  background: #52F9D4;
+  background: #eeeeee;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.nautilus {
+  background: #ddd;
+  position: relative;
+  min-width: 161.8034vh;
+  height: 100vh;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.nautilus > div {
+  position: absolute;
+  z-index: 900;
+  -webkit-transition: all 400ms ease-out;
+  transition: all 400ms ease-out;
+  -webkit-animation: genie 400ms forwards ease-out;
+          animation: genie 400ms forwards ease-out;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  width: 9.016986vh;
+  height: 5.57280vh;
+  left: 114.59055442vh;
+  top: 70.820377901vh;
+  opacity: 0;
+}
+.nautilus > div:nth-child(1) {
+  opacity: 1;
+  width: 100vh;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: #52F9D4;
+  z-index: 999;
+}
+.nautilus > div:nth-child(2) {
+  opacity: 1;
+  width: 61.8034vh;
+  height: 61.8034vh;
+  top: 0vh;
+  left: 100vh;
+  background-color: #51E3C2;
+  z-index: 998;
+}
+.nautilus > div:nth-child(3) {
+  opacity: 1;
+  width: 38.19783669vh;
+  height: 38.19783669vh;
+  top: 61.8034vh;
+  left: 123.60615331vh;
+  background-color: #53C7AD;
+  z-index: 997;
+}
+.nautilus > div:nth-child(4) {
+  opacity: 1;
+  width: 23.60778717vh;
+  height: 23.60778717vh;
+  top: 76.39221283vh;
+  left: 100vh;
+  background-color: #51AF9A;
+  z-index: 996;
+}
+.nautilus > div:nth-child(5) {
+  opacity: 1;
+  height: 14.59055442vh;
+  width: 14.59055442vh;
+  top: 61.8034vh;
+  left: 100vh;
+  background: #4D9686;
+  z-index: 995;
+}
+.nautilus > div:nth-child(6) {
+  opacity: 1;
+  height: 9.016986vh;
+  width: 9.016986vh;
+  top: 61.8034vh;
+  left: 114.59055442vh;
+  background: #498376;
+  z-index: 994;
+}
+.nautilus > div:nth-child(7) {
+  opacity: 1;
+  width: 9.016986vh;
+  height: 5.57280vh;
+  left: 114.59055442vh;
+  top: 70.820377901vh;
+  z-index: 993;
+}
+
+@-webkit-keyframes genie {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes genie {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+button {
   position: absolute;
   top: 0;
   left: 0;
-  width: 33vw;
-  transform: translateY(200vh);
-  animation: var(--name) var(--duration) linear infinite;
-  box-shadow: 1px 3px 15px rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
-img:nth-child(1) {
-  animation-delay: 0s;
-}
-img:nth-child(2) {
-  animation-delay: -3s;
-}
-img:nth-child(3) {
-  animation-delay: -6s;
-}
-img:nth-child(4) {
-  animation-delay: -9s;
-}
-img:nth-child(5) {
-  animation-delay: -12s;
-}
-img:nth-child(6) {
-  animation-delay: -15s;
-}
-img:nth-child(7) {
-  animation-delay: -18s;
-}
-img:nth-child(8) {
-  animation-delay: -21s;
-}
-img:nth-child(9) {
-  animation-delay: -24s;
-}
-img:nth-child(10) {
-  animation-delay: -27s;
-}
-img:nth-child(1) {
-  --name: float-up-1;
-  --duration: calc(20s * 1);
-  left: 0vw;
-  z-index: -1;
-}
-img:nth-child(2) {
-  --name: float-up-3;
-  --duration: calc(20s * 3);
-  left: 10vw;
-  z-index: -3;
-}
-img:nth-child(3) {
-  --name: float-up-2;
-  --duration: calc(20s * 2);
-  left: 90vw;
-  z-index: -2;
-}
-img:nth-child(4) {
-  --name: float-up-1;
-  --duration: calc(20s * 1);
-  left: 36vw;
-  z-index: -1;
-}
-img:nth-child(5) {
-  --name: float-up-3;
-  --duration: calc(20s * 3);
-  left: 62vw;
-  z-index: -3;
-}
-img:nth-child(6) {
-  --name: float-up-2;
-  --duration: calc(20s * 2);
-  left: 15vw;
-  z-index: -2;
-}
-img:nth-child(7) {
-  --name: float-up-2;
-  --duration: calc(20s * 2);
-  left: 55vw;
-  z-index: -2;
-}
-img:nth-child(8) {
-  --name: float-up-3;
-  --duration: calc(20s * 3);
-  left: -20vw;
-  z-index: -3;
-}
-img:nth-child(9) {
-  --name: float-up-1;
-  --duration: calc(20s * 1);
-  left: 68vw;
-  z-index: -1;
-}
-img:nth-child(10) {
-  --name: float-up-2;
-  --duration: calc(20s * 2);
-  left: 0vw;
-  z-index: -2;
+  height: 60px;
+  width: 200px;
 }
 
-@keyframes float-up-3 {
-  from {
-    transform: translateY(200vh) translateZ(-50vh);
-  }
-  to {
-    transform: translateY(-200vh) translateZ(-50vh);
-  }
+.column {
+  padding: 1rem;
+  color: #333;
 }
-@keyframes float-up-2 {
-  from {
-    transform: translateY(150vh) translateZ(-25vh);
-  }
-  to {
-    transform: translateY(-150vh) translateZ(-25vh);
-  }
+.column h1, .column h2, .column h3, .column h4 {
+  font-weight: 300;
 }
-@keyframes float-up-1 {
-  from {
-    transform: translateY(100vh);
-  }
-  to {
-    transform: translateY(-100vh);
-  }
+.column h1 {
+  font-size: 48px;
 }
-@keyframes spin {
-  10%, 100% {
-    transform: rotateY(360deg);
-  }
-}
-@keyframes shrink {
-  0% {
-    transform: scale(1) translateX(0);
-  }
-  2.5% {
-    transform: scale(0.75) translateX(5%);
-  }
-  7.5% {
-    transform: scale(0.75) translateX(-5%);
-  }
-  10%, 100% {
-    transform: scale(1);
-  }
+.column h2 {
+  font-size: 24px;
 }
